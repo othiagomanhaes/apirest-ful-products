@@ -1,34 +1,30 @@
 package com.thiago.apirestfulproducts.entities
 
+import jakarta.persistence.Column
 import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 import jakarta.persistence.Table
-import jakarta.validation.constraints.NotNull
-import jakarta.validation.constraints.Size
 import java.util.Date
 
 @Entity
 @Table(name = "products")
-class Product(
-    @field:Id
-    @field:GeneratedValue(strategy = GenerationType.IDENTITY)
+data class Product(
+
+    @Id
     val id: Long,
 
-    @field:NotNull
-    @field:Size(min = 2, max = 30, message = "Name must be at least 2 and maximum 30 characters")
+    @Column(name = "name")
     var name: String,
 
-    @field:NotNull
+    @Column(name = "price")
     var price: Double,
 
-    @field:NotNull
+    @Column(name = "quantity")
     var quantity: Long,
 
-    @field:NotNull
+    @Column(name = "created_at")
     var createdAt: Date,
 
-    @field:NotNull
+    @Column(name = "update_at")
     var updatedAt: Date?
 )
