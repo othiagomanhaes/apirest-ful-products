@@ -4,7 +4,7 @@ import java.util.*
 
 data class ProductResponse(
 
-    val id: Long,
+    val id: String,
 
     val name: String,
 

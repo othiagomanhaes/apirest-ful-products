@@ -6,5 +6,5 @@ import jakarta.persistence.*
 @Table(name = "api_keys")
  data class ApiKey(
      @Id
-     val id: Long
+     val id: String
 )

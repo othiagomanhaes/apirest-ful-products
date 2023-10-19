@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull
 data class CreateProductRequest(
 
     @field:NotNull
-    val id: Long?,
+    val id: String?,
 
     @field:NotNull
     val name: String?,

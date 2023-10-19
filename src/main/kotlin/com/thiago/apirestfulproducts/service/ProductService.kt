@@ -9,11 +9,11 @@ interface ProductService {
 
     fun create(createProductRequest: CreateProductRequest): ProductResponse
 
-    fun get(id: Long): ProductResponse
+    fun get(id: String): ProductResponse
 
-    fun update(id: Long, updateProductRequest: UpdateProductRequest): ProductResponse
+    fun update(id: String, updateProductRequest: UpdateProductRequest): ProductResponse
 
-    fun delete(id: Long)
+    fun delete(id: String)
 
     fun list(listProductRequest: ListProductRequest): List<ProductResponse>
 }

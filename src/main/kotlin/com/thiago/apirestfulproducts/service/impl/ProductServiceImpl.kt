@@ -34,12 +34,12 @@ class ProductServiceImpl(
         return convertProductToProductResponse(product)
     }
 
-    override fun get(id: Long): ProductResponse {
+    override fun get(id: String): ProductResponse {
         val product = findProductByIdOrThrowNotFound(id)
         return convertProductToProductResponse(product)
     }
 
-    override fun delete(id: Long) {
+    override fun delete(id: String) {
         val product = findProductByIdOrThrowNotFound(id)
         productsRepository.delete(product)
     }
@@ -50,7 +50,7 @@ class ProductServiceImpl(
         return products.map { convertProductToProductResponse(it) }
     }
 
-    override fun update(id: Long, updateProductRequest: UpdateProductRequest): ProductResponse {
+    override fun update(id: String, updateProductRequest: UpdateProductRequest): ProductResponse {
         val product = findProductByIdOrThrowNotFound(id)
 
         validationUtil.validate(product)
@@ -66,7 +66,7 @@ class ProductServiceImpl(
         return convertProductToProductResponse(product)
     }
 
-    private fun findProductByIdOrThrowNotFound(id: Long): Product {
+    private fun findProductByIdOrThrowNotFound(id: String): Product {
         val product = productsRepository.findByIdOrNull(id)
         if (product == null) {
             throw ChangeSetPersister.NotFoundException()

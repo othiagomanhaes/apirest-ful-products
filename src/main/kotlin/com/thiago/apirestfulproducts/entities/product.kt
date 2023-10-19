@@ -11,7 +11,7 @@ import java.util.Date
 data class Product(
 
     @Id
-    val id: Long,
+    val id: String,
 
     @Column(name = "name")
     var name: String,
