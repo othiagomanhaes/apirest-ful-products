@@ -14,5 +14,5 @@ data class ProductResponse(
 
     val createdAt: Date?,
 
-    val updateAt: Date?
+    val updatedAt: Date?
 )

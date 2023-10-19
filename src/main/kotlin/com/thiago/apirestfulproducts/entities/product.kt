@@ -20,7 +20,7 @@ data class Product(
     var price: Double,
 
     @Column(name = "quantity")
-    var quantity: Long,
+    var quantity: Int,
 
     @Column(name = "created_at")
     var createdAt: Date,

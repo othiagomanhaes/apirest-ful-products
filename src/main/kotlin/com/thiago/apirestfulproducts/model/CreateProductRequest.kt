@@ -14,5 +14,5 @@ data class CreateProductRequest(
     val price: Double,
 
     @field:NotNull
-    val quantity: Long
+    val quantity: Int
 )
